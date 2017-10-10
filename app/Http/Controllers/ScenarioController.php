@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ScenarioPost;
 use App\Models\Scenario;
 use App\Models\ScenarioTag;
 use Illuminate\Http\Request;
@@ -12,8 +13,6 @@ class ScenarioController extends Controller
     public function getList()
     {
         $scenarios = Scenario::all()->toArray();
-//        $scenario_tags = ScenarioTag::all();
-//        dd($scenarios->toArray(), $scenario_tags->toArray());
         return view('page.scenario.list')->with('scenarios', $scenarios);
     }
 
@@ -22,7 +21,7 @@ class ScenarioController extends Controller
         return view('page.scenario.post');
     }
 
-    public function postPost(Request $request)
+    public function postPost(ScenarioPost $request)
     {
         $scenario = new Scenario();
 
