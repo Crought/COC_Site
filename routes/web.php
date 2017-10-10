@@ -11,11 +11,14 @@
 |
 */
 
+Route::group(['middleware' => 'auth.admin'], function() {
 
-Route::group(['prefix' => 'scenario'], function() {
-    Route::get('/list', 'ScenarioController@getList')->name('scenario.list');
-    Route::get('/post', 'ScenarioController@getPost')->name('scenario.getPost');
-    Route::post('/post', 'ScenarioController@postPost')->name('scenario.postPost');
+    Route::group(['prefix' => 'scenario'], function() {
+        Route::get('/list', 'ScenarioController@getList')->name('scenario.list');
+        Route::get('/post', 'ScenarioController@getPost')->name('scenario.getPost');
+        Route::post('/post', 'ScenarioController@postPost')->name('scenario.postPost');
+    });
+
+    Route::get('/', 'PagesController@getIndex')->name('index');
+
 });
-
-Route::get('/', 'PagesController@getIndex')->name('index');

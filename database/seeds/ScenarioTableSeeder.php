@@ -15,7 +15,6 @@ class ScenarioTableSeeder extends Seeder
 
         for($i=0;$i<50;$i++){
             $faker = Faker::create('ja_JP');
-            $player = rand(1, 4);
             DB::table('scenarios')->insert([
                 'title' => $faker->realText(20),
                 'description' => $faker->realText(200),
