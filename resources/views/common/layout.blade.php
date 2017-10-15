@@ -3,56 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>シナリオ保管庫</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <title>クトゥルフ神話シナリオ置き場</title>
+    <link rel="stylesheet" type="text/css" href="{{asset("font-awesome/css/font-awesome.min.css")}}">
+    <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{asset("css/style.css")}}">
 </head>
 <body>
 <header>
     <div id="header_container">
-        <div class="container">
-            <div class="row">
-                <div class="col-9">
-                    <h1>シナリオ保管庫</h1>
-                </div>
-                <div class="col-1">
-                    <div class="icons">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h1>クトゥルフ神話シナリオ置き場</h1>
+        <p>ここはクトゥルフ神話TRPGのシナリオを保管,シェアするサイトです。</p>
     </div>
 </header>
-<hr>
 <main>
 
-@yield('content')
+    @yield('content')
 
 </main>
 <footer>
     <div id="footer_container">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
+        <div class="footer_contents">
+            <ul>
+                <li>タイトル/作者から探す</li>
+                <div class="search_name">
+                    <input type="text" name="text" value=""><i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <li class="search">プレイ人数から探す</li>
+                <div class="play_time none">
+                    <ul>
+                        <li><a href="">１～３人程度</a></li>
+                        <li><a href="">２～４人程度</a></li>
+                        <li><a href="">４～６人程度</a></li>
+                        <li><a href="">６人以上</a></li>
+                    </ul>
+                </div>
+                <li class="search">プレイ時間から探す</li>
+                <div class="play_time none">
+                    <ul>
+                        <li><a href="">５時間以下</a></li>
+                        <li><a href="">５～１２時間</a></li>
+                        <li><a href="">１２～２４時間</a></li>
+                        <li><a href="">２４時間以上</a></li>
+                    </ul>
+                </div>
+                <li class="search">KP難易度から探す</li>
+                <div class="kp_difficulty none">
+                    <ul>
+                        <li><a href="">★☆☆☆☆</a></li>
+                        <li><a href="">★★☆☆☆</a></li>
+                        <li><a href="">★★★☆☆</a></li>
+                        <li><a href="">★★★★☆</a></li>
+                        <li><a href="">★★★★★</a></li>
+                    </ul>
+                </div>
+                <li class="search">PL難易度から探す</li>
+                <div class="pl_difficulty none">
+                    <ul>
+                        <li><a href="">★☆☆☆☆</a></li>
+                        <li><a href="">★★☆☆☆</a></li>
+                        <li><a href="">★★★☆☆</a></li>
+                        <li><a href="">★★★★☆</a></li>
+                        <li><a href="">★★★★★</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="footer_contents">
+            <h3>良く使用されているタグ</h3>
+            <ul class="tag_flex">
+                <li class="tag_name">#ホラー</li>
+                <li class="tag_name">#コズミック</li>
+                <li class="tag_name">#closed</li>
+                <li class="tag_name">#open</li>
+                <li class="tag_name">#現代日本</li>
+                <li class="tag_name">#1920</li>
+                <li class="tag_name">#アメリカ</li>
+                <li class="tag_name">#アジア</li>
+                <li class="tag_name">#</li>
+            </ul>
+        </div>
+        <div class="footer_contents">
+            <ul>
+                <li>トップページへ戻る</li>
+                <li>利用規約</li>
+                <li>ヘルプ</li>
+                <li>ガイドライン</li>
+                <li><i class="fa fa-twitter" aria-hidden="true"></i>Twitterをチェックする</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
     </div>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous">
+</script>
 <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>

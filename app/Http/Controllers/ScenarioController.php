@@ -7,6 +7,7 @@ use App\Models\Scenario;
 use App\Models\ScenarioTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class ScenarioController extends Controller
 {
@@ -14,6 +15,12 @@ class ScenarioController extends Controller
     {
         $scenarios = Scenario::all()->toArray();
         return view('page.scenario.list')->with('scenarios', $scenarios);
+    }
+
+    public function getDetail($id)
+    {
+        $scenario = Scenario::find($id)->toArray();
+        return view('page.scenario.detail')->with('scenario', $scenario);
     }
 
     public function getPost()

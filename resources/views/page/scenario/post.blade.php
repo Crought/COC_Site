@@ -2,67 +2,99 @@
 
 @section('content')
 
+    <ul class="breadcrumb">
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a href="{{route("index")}}" itemprop="">
+                <span itemprop="title">トップページ</span>
+            </a>
+        </li>
+        <li>></li>
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span itemprop="title">シナリオ投稿</span>
+        </li>
+        <!--
+              <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="https://" itemprop="">
+                  <span itemprop="title"></span>
+                </a>
+              </li>
+        -->
+    </ul>
     <div id="main_container">
-        <h1>投稿</h1>
-        <a href="{{route('index')}}">TOPへ</a>
-        <a href="{{route('scenario.list')}}">一覧へ</a>
-        <form method="post" action="{{route('scenario.postPost')}}">
-            {{ csrf_field() }}
 
-            <label>シナリオ名</label>
-            <input type="text" name="title">
+        @include("common.sideMenu")
 
-            <label>投稿者名</label>
-            <input type="text" name="contributor">
-
-            <label>プレイ人数</label>
-            <select name="player_number">
-                <option value="1">1人</option>
-                <option value="2">1~4人程度</option>
-                <option value="3">2~5人程度</option>
-                <option value="4">3~6人程度</option>
-                <option value="5">6人以上</option>
-            </select>
-
-            <label>時間</label>
-            <input type="number" step="0.5" min="0" max="999" name="playing_time">
-
-            <label>KP難易度</label>
-            <span class="keeper_technique">
-              <input type="radio" name="keeper_technique" value="1"><i></i>
-              <input type="radio" name="keeper_technique" value="2"><i></i>
-              <input type="radio" name="keeper_technique" value="3"><i></i>
-              <input type="radio" name="keeper_technique" value="4"><i></i>
-              <input type="radio" name="keeper_technique" value="5"><i></i>
-            </span>
-
-            <label>PL難易度</label>
-            <span class="player_technique">
-              <input type="radio" name="player_technique" value="1"><i></i>
-              <input type="radio" name="player_technique" value="2"><i></i>
-              <input type="radio" name="player_technique" value="3"><i></i>
-              <input type="radio" name="player_technique" value="4"><i></i>
-              <input type="radio" name="player_technique" value="5"><i></i>
-            </span>
-
-            <label>タグ</label>
-            <select name="scenario_tag_id">
-                <option value="1">あああ</option>
-                <option value="2">いいい</option>
-                <option value="3">ううう</option>
-                <option value="4">えええ</option>
-                <option value="5">おおお</option>
-            </select>
-
-            <label>シナリオ概要(200字まで)</label>
-            <textarea name="description"></textarea>
-
-            <label>シナリオ</label>
-            <textarea name="scenario"></textarea>
-
-            <input type="submit" value="投稿する">
-
-        </form>
+        <div id="post_form">
+            <h3>シナリオ投稿</h3>
+            <form method="post" action="">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class=""><label>シナリオ名</label></td>
+                        <td><input type="text" name="title"></td>
+                    </tr>
+                    <tr>
+                        <td><label>投稿者名</label></td>
+                        <td><input type="text" name="contributor"></td>
+                    </tr>
+                    <tr>
+                        <td><label>推奨プレイ人数</label></td>
+                        <td>
+                            <select name="player_number">
+                                <option value="2">1~3人程度</option>
+                                <option value="3">2~4人程度</option>
+                                <option value="4">4~6人程度</option>
+                                <option value="5">6人以上</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>推定プレイ時間</label></td>
+                        <td><input type="number" step="0.5" min="0" max="999" name="playing_time"></td>
+                    </tr>
+                    <tr>
+                        <td>KP難易度</td>
+                        <td>
+                            <select name="keeper_technique">
+                                <option name="keeper_technique" value="1">★☆☆☆☆</option>
+                                <option name="keeper_technique" value="2">★★☆☆☆</option>
+                                <option name="keeper_technique" value="3">★★★☆☆</option>
+                                <option name="keeper_technique" value="4">★★★★☆</option>
+                                <option name="keeper_technique" value="5">★★★★★</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>PL難易度</label></td>
+                        <td>
+                            <select name="player_technique">
+                                <option name="player_technique" value="1">★☆☆☆☆</option>
+                                <option name="player_technique" value="2">★★☆☆☆</option>
+                                <option name="player_technique" value="3">★★★☆☆</option>
+                                <option name="player_technique" value="4">★★★★☆</option>
+                                <option name="player_technique" value="5">★★★★★</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>タグ</label></td>
+                        <td><input type="text" name="title">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>シナリオ概要(200字まで)</label></td>
+                        <td><textarea name="description" rows="7" cols="100"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label>シナリオ</label></td>
+                        <td><textarea name="scenario" rows="100" cols="100"></textarea></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <input type="submit" value="投稿する">
+            </form>
+        </div>
     </div>
 
 @endsection
