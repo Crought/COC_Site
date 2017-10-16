@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => 'auth.admin'], function() {
+//Route::group(['middleware' => 'auth.admin'], function() {
 
     Route::group(['prefix' => 'scenario'], function() {
         Route::get('/list', 'ScenarioController@getList')->name('scenario.list');
@@ -22,4 +22,4 @@ Route::group(['middleware' => 'auth.admin'], function() {
 
     Route::get('/', 'PagesController@getIndex')->name('index');
 
-});
+//});
