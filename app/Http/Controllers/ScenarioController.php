@@ -13,13 +13,13 @@ class ScenarioController extends Controller
 {
     public function getList()
     {
-        $scenarios = Scenario::all()->toArray();
+        $scenarios = Scenario::paginate(10);
         return view('page.scenario.list')->with('scenarios', $scenarios);
     }
 
     public function getDetail($id)
     {
-        $scenario = Scenario::find($id)->toArray();
+        $scenario = Scenario::find($id);
         return view('page.scenario.detail')->with('scenario', $scenario);
     }
 
@@ -34,7 +34,7 @@ class ScenarioController extends Controller
 
         $scenario->fill($request->all())->save();
 
-        $scenarios = Scenario::all()->toArray();
+        $scenarios = Scenario::paginate(10);
         return view('page.scenario.list')->with('scenarios', $scenarios);
     }
 }

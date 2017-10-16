@@ -89,7 +89,7 @@ body {
 }
 .tag_name {
 	flex: 1 0 auto;
-	background: #eee;
+	background: #b2ffd8;
 	border-radius: 3px;
 	padding: 3px;
 	margin: 3px;
@@ -125,6 +125,9 @@ body {
 	flex: auto;
 	width: 50%;
 	margin: 2.5%;
+}
+#main_menu a {
+	text-decoration: none;
 }
 #main_menu td {
 	text-align: center;
@@ -167,7 +170,7 @@ body {
 
 /* フッター */
 #footer_container {
-	background: #eee;
+	background: #b2ffd8;
 	display: flex;
 	flex-wrap: wrap;
 	padding: 50px;
@@ -183,4 +186,35 @@ body {
 }
 .footer_contents:first-child {
 	border: 0;
+}
+
+/* ページネーション */
+.pagination {
+	display: flex;
+	margin: 0 auto;
+}
+.pagination>li {
+	list-style: none;
+	text-decoration: none;
+	text-align: center;
+	width: 20px;
+	padding: 5px;
+	border: 1px solid #000;
+	border-left: none;
+}
+.pagination>li:first-child {
+	border-left: 1px solid #000;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.pagination>li:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.pagination>li>a {
+	color: #000;
+	text-decoration: none;
+}
+.pagination>.active{
+	background-color: #b2ffd8;
 }

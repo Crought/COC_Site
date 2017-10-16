@@ -26,7 +26,8 @@
 
         <div id="post_form">
             <h3>シナリオ投稿</h3>
-            <form method="post" action="">
+            <form method="post" action="{{route('scenario.postPost')}}">
+                {{ csrf_field() }}
                 <table>
                     <tbody>
                     <tr>
